@@ -1,14 +1,18 @@
 class PhotosController < ApplicationController
   def index
+    @photos = Photo.all
   end
 
   def show
+    set_photo
   end
 
   def new
+    @photo = Photo.new
   end
 
   def update
+    set_photo
   end
 
   private

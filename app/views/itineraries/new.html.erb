@@ -1,0 +1,8 @@
+<h2>Create Itinerary for Trip </h2>
+
+
+<%=form_for @itinerary do |f| %>
+Name this Itinerary:<%=f.text_field :day %> <br>
+Select A Trip To Add It To: <%=f.text_field :trip_id%>
+
+<%end%>
