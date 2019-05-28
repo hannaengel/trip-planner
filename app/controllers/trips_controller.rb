@@ -35,6 +35,7 @@ class TripsController < ApplicationController
   end
 
   def trip_params
+tripupdate
     params.require(:trip).permit(:name, :destination, :user_id)
   end
 
