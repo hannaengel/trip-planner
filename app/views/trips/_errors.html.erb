@@ -1,0 +1,7 @@
+<ul class="field_with_errors">
+  <% if @trip.errors.any? %>
+     <% @trip.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+     <% end %>
+</ul>
