@@ -1,0 +1,14 @@
+<ul class="field_with_errors">
+  <% if @itinerary.errors.any? %>
+     <% @itinerary.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+     <% end %>
+</ul>
+<%=form_for @itinerary do |f| %>
+<%= f.label :trip_id %> <%= f.collection_select(:trip_id, Trip.all, :id, :name) %><br>
+<%= f.label :activity_id %> <%= f.collection_select(:activity_id, Activity.all, :id, :name) %><br>
+Day: <%=f.text_field :day %> <br>
+
+<%=f.submit%>
+<%end%>

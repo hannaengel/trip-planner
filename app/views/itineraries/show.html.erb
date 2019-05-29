@@ -1,4 +1,5 @@
-<h2>Itinerary Show Page for <%=@itinerary.day%></h2>
+<h2>Itinerary Show Page for <%=@itinerary.trip.name%></h2>
 
-Day:<%= @itinerary.day%> <br>
-Trip Id:<%= @itinerary.trip_id%>
+Trip: <%= @itinerary.trip.name%><br>
+Day: <%= @itinerary.day%> <br>
+Activity: <%= @itinerary.activity.name %>

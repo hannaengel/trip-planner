@@ -1,10 +1,12 @@
 class ItinerariesController < ApplicationController
+
+    before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
+
   def index
     @itineraries = Itinerary.all
   end
 
   def show
-    set_itinerary
   end
 
   def new
@@ -20,8 +22,15 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
-    set_itinerary
+    if @itinerary.update(itinerary_params)
+      redirect_to @itinerary
+    else
+      render :edit
+    end
   end
 
   private
@@ -31,7 +40,7 @@ class ItinerariesController < ApplicationController
   end
 
   def itinerary_params
-    params.require(:itinerary).permit(:day)
+    params.require(:itinerary).permit(:day, :trip_id, :activity_id)
   end
 
 end
