@@ -3,4 +3,9 @@
 
 
 Activity name:<%=@activity.name %> <br>
-Activity Description: <%=@activity.description%>
+Activity Description: <%=@activity.description%> <br>
+
+
+<br>
+<br>
+You have <%=@activity.name%> booked for these trips: <%=@activity.trips.pluck(:name)%>

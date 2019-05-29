@@ -1,9 +1,15 @@
 <h2>Create New Activity</h2>
 
 
-<%=form_for @activity do |f| %>
+<%= form_for @activity do |f| %>
 Activity name:<%=f.text_field :name %> <br>
 Activity description:<%=f.text_field :description %> <br>
-<%=f.submit "Create New Activity" %>
-
-<%end%>
+Add to Trip:
+  <%= f.text_field :trip_name, list: "trips_autocomplete" %>
+  <datalist id="trips_autocomplete">
+    <% Trip.all.each do |t| %>
+      <option value="<%= t.name %>">
+    <% end %>
+  </datalist> <br>
+  <%= f.submit %>
+<% end %>

@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
 
   def show
     set_activity
+    @trips = Trip.all
   end
 
   def new
@@ -21,8 +22,17 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def edit
+    set_activity
+  end
 
   def update
+    @activity = Activity.update(activity_params)
+    if @activity.update
+      redirect_to @activity
+    else
+      render :edit
+    end
   end
 
   private
@@ -32,7 +42,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name, :description)
+    params.require(:activity).permit(:name, :description, :trip_name)
   end
 
 end

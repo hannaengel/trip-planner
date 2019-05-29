@@ -14,7 +14,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    byebug
+
     @trip = Trip.create(trip_params)
     redirect_to @trip
     # @trip = Trip.new(trip_params)
@@ -35,7 +35,7 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-tripupdate
+
     params.require(:trip).permit(:name, :destination, :user_id)
   end
 
