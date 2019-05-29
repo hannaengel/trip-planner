@@ -1,0 +1,17 @@
+<h2>Edit Username/Passord</h2>
+
+
+   <%= form_for @user do |f| %>
+     <p> Username:</br> <%= f.text_field :username%> </p>
+     <p> Password:</br> <%= f.password_field :password%></p>
+     <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
+     <%= f.submit %>
+   <% end %>
+
+   <br>
+   <% if @user.errors.any? %>
+     <% for message_error in @user.errors.full_messages %>
+       <li> <%= message_error %></li>
+     <% end %>
+     </ul>
+   <% end %>

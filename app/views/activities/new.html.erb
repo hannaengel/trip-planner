@@ -1,4 +1,21 @@
 <h2>Create New Activity</h2>
 
 
+
 <%= render 'errors' %>
+
+<%= form_for @activity do |f| %>
+Activity name:<%=f.text_field :name %> <br>
+Activity description:<%=f.text_field :description %> <br>
+Add to Trip:
+  <%= f.collection_check_boxes :trip_ids, Trip.all, :id, :name %><br>
+  <%#<%= f.fields_for :trips, @activity.trips.build do |trips_fields| %>
+      <%#Create New Trip:<%= trips_fields.text_field :name %>
+
+  <%#Associate with this user:<%=(trips_fields.collection_select :user_id, User.all, :id, :value => :username) %>
+    <%#<% end %>
+
+
+  <%= f.submit %>
+<% end %>
+

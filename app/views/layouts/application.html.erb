@@ -1,15 +1,27 @@
-<!DOCTYPE html>
+
+
 <html>
-  <head>
-    <title>TripPlanner</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>TripPlanner</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="navigation">
+      <ul>
+        <a href="/trips">Trips</a>
+        <a href="/activities">Activities</a>
+        <a href="/itineraries">Itineraries</a>
+        <a href="/photos">Photos</a>
+        <a href="/trips/new">Start New Trip</a>
+      </ul>
+    </div>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%=yield %>
 
-  <body>
-    <%= yield %>
-  </body>
+    <div class="footer">
+      <p>Oh, the places you'll go!!!!!!</p>
+    </div>
+</body>
 </html>

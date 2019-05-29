@@ -2,6 +2,7 @@
 
 
 
+
 Activity Name:<%= @activity.name %> <br>
 Activity Description: <%= @activity.description%><br>
 <br>
@@ -14,3 +15,17 @@ Activity Description: <%= @activity.description%><br>
 <br>
 <br>
 <%= link_to "Current Scheduled Activities", activities_path %>
+
+Activity name:<%=@activity.name %> <br>
+Activity Description: <%=@activity.description%> <br>
+
+
+<br>
+<br>
+You have <%=@activity.name%> booked for these trips: <br>
+
+
+<%@activity.trips.each do |t|%>
+<%=link_to t.name, t%>
+<br>
+<%end%>

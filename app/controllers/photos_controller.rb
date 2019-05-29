@@ -3,8 +3,9 @@ class PhotosController < ApplicationController
     @photos = Photo.all
   end
 
-  def show
-    set_photo
+  def create
+    photo = Photo.create!(photo_params)
+    redirect_to photo
   end
 
   def new
@@ -22,7 +23,7 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:image, :desciption, :trip_id)
+    params.require(:photo).permit!
   end
 
 end

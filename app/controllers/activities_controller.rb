@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+
     @activity = Activity.new(activity_params)
     if @activity.save
       redirect_to @activity
@@ -28,7 +29,7 @@ class ActivitiesController < ApplicationController
   def update
     if @activity.update(activity_params)
       # @trip.update(params.require(:trip).permit(:name, :destination))
-      redirect_to @trip
+      redirect_to @activity
     else
       render :edit
     end
@@ -39,6 +40,15 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
 
+  def update
+    @activity = Activity.update(activity_params)
+    if @activity.update
+      redirect_to @activity
+    else
+      render :edit
+    end
+  end
+
   private
 
   def set_activity
@@ -46,7 +56,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name, :description)
+    params.require(:activity).permit(:name, :description, trip_ids:[], trips_attributes: [:name, :username])
   end
 
 end
