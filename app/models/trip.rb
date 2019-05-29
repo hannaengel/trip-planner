@@ -4,4 +4,7 @@ class Trip < ApplicationRecord
   has_many :photos
   has_many :activities, through: :itineraries
 
+  validates :name, presence: true
+  validates :destination, presence: true
+
 end

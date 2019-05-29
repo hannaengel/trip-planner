@@ -1,3 +1,15 @@
 <h1><%= @trip.name %><br></h1>
 
 Destination: <%= @trip.destination %>
+<br>
+<br>
+<%= link_to "Edit Trip Details", edit_trip_path(@trip) %>
+<br>
+<br>
+<%= form_tag @trip, method: "delete" do %>
+  <%= submit_tag "Delete Trip" %>
+<% end %>
+<br>
+<br>
+
+<%= link_to "Trip History", trips_path %>
