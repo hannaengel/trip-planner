@@ -1,11 +1,12 @@
 class ActivitiesController < ApplicationController
 
+  before_action :set_activity, only: [:show, :edit, :update, :destroy]
+
   def index
     @activities = Activity.all
   end
 
   def show
-    set_activity
   end
 
   def new
@@ -21,8 +22,21 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def edit
+  end
 
   def update
+    if @activity.update(activity_params)
+      # @trip.update(params.require(:trip).permit(:name, :destination))
+      redirect_to @trip
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @activity.destroy
+    redirect_to activities_path
   end
 
   private

@@ -2,5 +2,15 @@
 
 
 
-Activity name:<%=@activity.name %> <br>
-Activity Description: <%=@activity.description%>
+Activity Name:<%= @activity.name %> <br>
+Activity Description: <%= @activity.description%><br>
+<br>
+<%= link_to "Edit Activity", edit_activity_path(@activity) %><br>
+<br>
+<br>
+<%= form_tag @activity, method: "delete" do %>
+  <%= submit_tag "Delete Activity" %>
+<% end %>
+<br>
+<br>
+<%= link_to "Current Scheduled Activities", activities_path %>

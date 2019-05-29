@@ -1,9 +1,4 @@
 <h2>Create New Activity</h2>
 
 
-<%=form_for @activity do |f| %>
-Activity name:<%=f.text_field :name %> <br>
-Activity description:<%=f.text_field :description %> <br>
-<%=f.submit "Create New Activity" %>
-
-<%end%>
+<%= render 'errors' %>
