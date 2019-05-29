@@ -1,6 +1,11 @@
 class Activity < ApplicationRecord
   has_many :itineraries
   has_many :trips, through: :itineraries
+
+
+  validates :name, presence: true
+  validates :description, presence: true
+
   accepts_nested_attributes_for :trips
 
   def trip_name=(name)
@@ -17,5 +22,6 @@ class Activity < ApplicationRecord
      self.trips << trip
    end
  end
+
 
 end
