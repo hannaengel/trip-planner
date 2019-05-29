@@ -1,6 +1,9 @@
 <h2>Create New Activity</h2>
 
 
+
+<%= render 'errors' %>
+
 <%= form_for @activity do |f| %>
 Activity name:<%=f.text_field :name %> <br>
 Activity description:<%=f.text_field :description %> <br>
@@ -15,3 +18,4 @@ Add to Trip:
 
   <%= f.submit %>
 <% end %>
+

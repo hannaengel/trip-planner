@@ -1,0 +1,13 @@
+<ul class="field_with_errors">
+  <% if @activity.errors.any? %>
+     <% @activity.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+     <% end %>
+</ul>
+<%=form_for @activity do |f| %>
+Activity Name: <%= f.text_field :name %> <br>
+Activity Description: <%= f.text_field :description %> <br>
+<%= f.submit %>
+
+<%end%>
