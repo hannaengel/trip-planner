@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
 
-  before_action :set_trip, only: [:show, :edit, :destroy]
+  before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
     @trips = Trip.all
@@ -14,18 +14,30 @@ class TripsController < ApplicationController
   end
 
   def create
-    byebug
-    @trip = Trip.create(trip_params)
-    redirect_to @trip
-    # @trip = Trip.new(trip_params)
-    # if @trip.save
-    #   redirect_to @trip
-    # else
-    #   render :new
-    # end
+    @trip = Trip.new(trip_params)
+    if @trip.save
+      redirect_to @trip
+    else
+      render :new
+    end
+  end
+
+  def edit
+
   end
 
   def update
+    if @trip.update(trip_params)
+      @trip.update(params.require(:trip).permit(:name, :destination))
+      redirect_to @trip
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @trip.destroy
+    redirect_to @trips
   end
 
   private
@@ -35,7 +47,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-tripupdate
     params.require(:trip).permit(:name, :destination, :user_id)
   end
 

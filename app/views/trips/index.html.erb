@@ -2,4 +2,6 @@
 
 <% @trips.each do |trip| %>
   <%= link_to trip.name, trip %><br>
+  <%= link_to trip.destination, trip %><br>
+  <hr>
 <% end %>
