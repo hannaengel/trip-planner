@@ -1,0 +1,9 @@
+<h1>Need to update some trip details?</h1>
+
+<%= form_for @trip do |f| %>
+
+<%= f.label :name %> <%= f.text_field :name %><br>
+<%= f.label :destination %> <%= f.text_field :destination %><br>
+
+<%= f.submit %>
+<% end %>
