@@ -8,4 +8,10 @@ Activity Description: <%=@activity.description%> <br>
 
 <br>
 <br>
-You have <%=@activity.name%> booked for these trips: <%=@activity.trips.pluck(:name)%>
+You have <%=@activity.name%> booked for these trips: <br>
+
+
+<%@activity.trips.each do |t|%>
+<%=link_to t.name, t%>
+<br>
+<%end%>

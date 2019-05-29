@@ -5,11 +5,13 @@
 Activity name:<%=f.text_field :name %> <br>
 Activity description:<%=f.text_field :description %> <br>
 Add to Trip:
-  <%= f.text_field :trip_name, list: "trips_autocomplete" %>
-  <datalist id="trips_autocomplete">
-    <% Trip.all.each do |t| %>
-      <option value="<%= t.name %>">
-    <% end %>
-  </datalist> <br>
+  <%= f.collection_check_boxes :trip_ids, Trip.all, :id, :name %><br>
+  <%#<%= f.fields_for :trips, @activity.trips.build do |trips_fields| %>
+      <%#Create New Trip:<%= trips_fields.text_field :name %>
+
+  <%#Associate with this user:<%=(trips_fields.collection_select :user_id, User.all, :id, :value => :username) %>
+    <%#<% end %>
+
+
   <%= f.submit %>
 <% end %>
