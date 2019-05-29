@@ -1,3 +1,10 @@
-<%image_tag @photo.img.variant(resize: "400x400") %>
+<h2><strong>New Photo Added To: <%=@photo.trip.name%></strong></h2>
+<br>
 
-<%=@photo.desciption %>
+    <%= image_tag @photo.image %> <br>
+    <%=@photo.description %>
+
+
+
+    <br>
+<%=link_to "View More Photos From This Trip", trip_path(@photo.trip)%>

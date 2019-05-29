@@ -5,9 +5,11 @@
      <% end %>
      <% end %>
 </ul>
-<%=form_for @activity do |f| %>
-Activity Name: <%= f.text_field :name %> <br>
-Activity Description: <%= f.text_field :description %> <br>
-<%= f.submit %>
+<%= form_for @activity do |f| %>
+Activity name:<%=f.text_field :name %> <br>
+Activity description:<%=f.text_field :description %> <br>
+Add to Trip:
+  <%= f.collection_check_boxes :trip_name, Trip.all, :id, :name %>
 
-<%end%>
+  <%= f.submit %>
+<% end %>

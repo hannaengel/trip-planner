@@ -1,10 +1,10 @@
-<h2>Add New Photo</h2
+<h2>Add New Photo</h2>
 
 <%= form_for @photo do |f| %>
-<%= f.file_field :img %>
-
+<%= f.file_field :image %>
 Description<%=f.text_field :description%> <br>
-Associated Trip  <%= f.collection_select :trip_id, Trip.all, :id, :name %><br>
+Add to Trip:
+  <%= f.collection_select :trip_id, Trip.all, :id, :name %>
 <%=f.submit  'Upload Photo'%>
 
 <%end%>
