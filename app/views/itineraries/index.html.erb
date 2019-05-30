@@ -2,12 +2,9 @@
 
 <%@itineraries.each do  |i| %>
 <ul>
-<<<<<<< HEAD
 
- Itinerary for Day <%=i.day%> <%=link_to 'Click Here', i %>
-=======
  <%= link_to "#{i.trip.name}, Day #{i.day}", i %>
->>>>>>> bd855a95d74977d90838be36a96c8953b6601e27
+
 
 </ul>
 <%end%>
