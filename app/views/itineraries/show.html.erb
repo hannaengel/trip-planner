@@ -2,4 +2,15 @@
 
 Trip: <%= @itinerary.trip.name%><br>
 Day: <%= @itinerary.day%> <br>
-Activity: <%= @itinerary.activity.name %>
+Activity: <%= @itinerary.activity.name %><br>
+<br>
+<br>
+<%= link_to "Edit Itinerary Details", edit_itinerary_path(@itinerary) %>
+<br>
+<br>
+<%= form_tag @trip, method: "delete" do %>
+  <%= submit_tag "Delete Trip" %>
+<% end %>
+<br>
+<br>
+<%= link_to "Itineraries", itineraries_path %>
