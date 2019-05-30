@@ -2,7 +2,7 @@
 
 <%@itineraries.each do  |i| %>
 <ul>
- <%= link_to i.day, i %>
+ <%= link_to "#{i.trip.name}, Day #{i.day}", i %>
 
 </ul>
 <%end%>
