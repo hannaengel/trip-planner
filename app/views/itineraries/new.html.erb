@@ -6,7 +6,11 @@
 <%=form_for @itinerary do |f| %>
 
 Select a Trip To Add A New Itinerary To:
-<%= f.collection_select(:trip_id, Trip.all, :id, :name) %><br>
+<%= f.collection_select(:trip_id, Trip.all, :id, :name, {prompt: 'Plese select'}) %><br>
+<br>
+Would you like to choose any activities?<br>
+<%= f.collection_select(:activity_id, Activity.all, :id, :name, {prompt: 'Plese select'}) %><br>
+<br>
 
 Enter The Day This Itinerary Is For: <%=f.text_field :day %> <br>
 

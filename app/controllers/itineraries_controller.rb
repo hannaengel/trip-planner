@@ -14,6 +14,7 @@ class ItinerariesController < ApplicationController
   end
 
   def create
+
     @itinerary = Itinerary.new(itinerary_params)
     if @itinerary.save
       redirect_to @itinerary
