@@ -3,8 +3,8 @@
 
    <%= form_for @user do |f| %>
      <p> Username:</br> <%= f.text_field :username%> </p>
-     <p> Password:</br> <%= f.password_field :password%></p>
-     <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
+     <p> Password:</br> <%= f.password_field :password_digest%></p>
+     <p> Password Confirmation:</br> <%= f.password_field :password_digest%> </p>
      <%= f.submit %>
    <% end %>
 

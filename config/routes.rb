@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   resources :trips
   resources :users
 
+  get '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#create'
+   delete 'logout'  => 'sessions#log_out'
+
 end

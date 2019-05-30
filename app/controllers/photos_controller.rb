@@ -11,7 +11,6 @@ class PhotosController < ApplicationController
 
   def show
     set_photo
-    
   end
 
 
