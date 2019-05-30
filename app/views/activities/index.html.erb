@@ -1,8 +1,18 @@
 
-<h1>Current Activities</h1>
+<h1 align="center">Current Activities</h1>
 
 <% @activities.each do |activity| %>
-  <%= link_to activity.name.titleize, activity %><br>
-  <%= activity.description%><br>
-  <hr>
-  <% end %>
+<a href="<%=activity_path(activity)%>" class="list-group-item list-group-item-action active">
+  <h4><%=activity.name%> <br></h4>
+  <%= activity.description%>
+
+</a>
+
+
+  <br>
+
+
+  <%end%>
+
+
+  <%= link_to "Add New Activity",new_activity_path%>
