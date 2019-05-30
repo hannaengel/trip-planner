@@ -33,6 +33,11 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def destroy
+    @itinerary.destroy
+    redirect_to itineraries_path
+  end
+
   private
 
   def set_itinerary
