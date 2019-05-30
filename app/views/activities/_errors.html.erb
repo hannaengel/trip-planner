@@ -9,7 +9,7 @@
 Activity name:<%=f.text_field :name %> <br>
 Activity description:<%=f.text_field :description %> <br>
 Add to Trip:
-  <%= f.collection_check_boxes :trip_name, Trip.all, :id, :name %>
+  <%= f.collection_check_boxes(:trip_ids, Trip.all, :id, :name) %>
 
   <%= f.submit %>
 <% end %>
