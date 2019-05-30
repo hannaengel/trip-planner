@@ -1,8 +1,18 @@
-
-
+<h4>View All Your Photos</h4>
 
 <% @photos.each do |p| %>
 
-<%= image_tag p.image %><br>
-<%=p.description%> <%p.trip_id%><br> <br>
-<%end %>
+  <div class="card">
+    <img class="card-img-top img-fluid" src="<%=url_for(p.image)%>" alt="...">
+      <div class="card-block">
+        <h4 class="card-title"><%=p.trip.name%></h4>
+        <p class="card-text"><%=p.description%> <%p.trip_id%></p>
+        <a href="<%=trip_path(p.trip)%>" class="card-link">Trip Page</a>
+    <%= form_tag p, method: "delete" do %>
+      <%= submit_tag "Delete Photo" %>
+      <%end%>
+    </div>
+
+    </div>
+
+<%end%>

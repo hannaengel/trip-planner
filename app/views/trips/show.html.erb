@@ -6,10 +6,28 @@ Destination: <%= @trip.destination %>
 You haven't created any itineraries yet for this trip. Click here to get started! <br> <%= link_to 'Create New Itinerary', new_itinerary_path%>
 <%else%>
 <%@trip.itineraries.each do |i| %>
+Click <%=link_to 'HERE', i%> for Itineray: Day
 <%=i.day%>
 <%end%>
 <%end%>
 <br>
+<br>
+<br>
+
+<h2><%=@trip.name%> Photos</h2>
+<%@trip.photos.each do |p| %>
+
+<%= image_tag p.image %><br>
+<%=p.description%> <%p.trip_id%><br>
+<%end %>
+
+
+
+
+
+
+
+
 <%= link_to "Edit Trip Details", edit_trip_path(@trip) %>
 <br>
 <br>
@@ -19,4 +37,4 @@ You haven't created any itineraries yet for this trip. Click here to get started
 <br>
 <br>
 
-<%= link_to "Trip History", trips_path %>
+<%= link_to "View All My Trips", trips_path %>

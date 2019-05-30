@@ -9,7 +9,7 @@ You have no trips yet! Click here to create a new trip: <%=link_to 'Create New T
 <%else%>
 <br>
 <%@user.trips.each do |t|%>
-<h4><%=t.name%></h4>
+<h4><%=link_to t.name, t%></h4>
 Destination:  <%=t.destination%> <br>
 <%=link_to 'Click to View Itineraries for Trip', t%>
 <%end%>

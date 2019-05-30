@@ -7,4 +7,10 @@
 
 
     <br>
+<%=link_to "Add Another Photo", new_photo_path%> <br>
 <%=link_to "View More Photos From This Trip", trip_path(@photo.trip)%>
+
+
+<%= form_tag @photo, method: "delete" do %>
+  <%= submit_tag "Delete Photo" %>
+<% end %>
