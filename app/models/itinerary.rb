@@ -4,5 +4,5 @@ class Itinerary < ApplicationRecord
 
   validates :day, presence: true
   validates :trip_id, presence: true
-  validates :activity_id, presence: true
+
 end

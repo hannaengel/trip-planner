@@ -1,11 +1,11 @@
-<h2>Itinerary Show Page for <%=@itinerary.trip.name%></h2>
+<h2>Itinerary for Day <%=@itinerary.day%> <%=link_to @itinerary.trip.destination, @itinerary.trip%> </h2>
 
-Trip: <%= @itinerary.trip.name%><br>
-Day: <%= @itinerary.day%> <br>
+
 Activity: <%= @itinerary.activity.name %><br>
 <br>
 <br>
-<%= link_to "Edit Itinerary Details", edit_itinerary_path(@itinerary) %>
+<%= link_to "Edit Itinerary Details", edit_itinerary_path(@itinerary) %> <br>
+<%= link_to "Add Another Itinerary", new_itinerary_path %>
 <br>
 <br>
 <%= form_tag @trip, method: "delete" do %>
@@ -13,4 +13,3 @@ Activity: <%= @itinerary.activity.name %><br>
 <% end %>
 <br>
 <br>
-<%= link_to "Itineraries", itineraries_path %>

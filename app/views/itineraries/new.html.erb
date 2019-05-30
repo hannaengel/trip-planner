@@ -2,3 +2,13 @@
 
 
 <%= render 'errors' %>
+
+<%=form_for @itinerary do |f| %>
+
+Select a Trip To Add A New Itinerary To:
+<%= f.collection_select(:trip_id, Trip.all, :id, :name) %><br>
+
+Enter The Day This Itinerary Is For: <%=f.text_field :day %> <br>
+
+<%=f.submit%>
+<%end%>

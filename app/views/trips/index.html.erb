@@ -1,7 +1,15 @@
-<h1>Past Trips</h1>
+<h1>Trips Index</h1>
+<ul>
+
 
 <% @trips.each do |trip| %>
-  <%= link_to trip.name, trip %><br>
-  <%= link_to trip.destination, trip %><br>
-  <hr>
+  <h4><%= link_to trip.name, trip %><br></h4>
+  Destination: <%=trip.destination%><br>
+  <%if trip.itineraries.count > 0%>
+  Itineraries: <%=trip.itineraries.each do |i|%>
+  <%= link_to i.day, i %><br>
 <% end %>
+<% end %>
+<br><br><br>
+<% end %>
+</ul>

@@ -2,6 +2,13 @@
 
 Destination: <%= @trip.destination %>
 <br>
+<% if @trip.itineraries.count == 0 %>
+You haven't created any itineraries yet for this trip. Click here to get started! <br> <%= link_to 'Create New Itinerary', new_itinerary_path%>
+<%else%>
+<%@trip.itineraries.each do |i| %>
+<%=i.day%>
+<%end%>
+<%end%>
 <br>
 <%= link_to "Edit Trip Details", edit_trip_path(@trip) %>
 <br>
