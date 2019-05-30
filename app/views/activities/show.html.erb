@@ -1,9 +1,9 @@
-<h2>Activity Show Page: <%=@activity.name%></h2>
+<h2><%=@activity.name.titleize%></h2>
 
 
 
 
-Activity Name:<%= @activity.name %> <br>
+Activity Name: <%= @activity.name.titleize %> <br>
 Activity Description: <%= @activity.description%><br>
 <br>
 <%= link_to "Edit Activity", edit_activity_path(@activity) %><br>
@@ -14,15 +14,14 @@ Activity Description: <%= @activity.description%><br>
 <% end %>
 <br>
 <br>
-<%= link_to "Current Scheduled Activities", activities_path %>
+<%= link_to "Current Scheduled Activities", activities_path %><br>
 
-Activity name:<%=@activity.name %> <br>
-Activity Description: <%=@activity.description%> <br>
+<%=@activity.name.titleize %> <br>
 
 
 <br>
 <br>
-You have <%=@activity.name%> booked for these trips: <br>
+You have <%=@activity.name.titleize%> booked for these trips: <br>
 
 
 <%@activity.trips.each do |t|%>
