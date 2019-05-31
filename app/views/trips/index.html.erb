@@ -1,17 +1,26 @@
 <h1>Trips Index</h1>
-<ul>
 
+
+<h4 align='center'><%=link_to 'Create New Trip', new_trip_path%></h4>
+
+
+
+<h1 align="center">Trips Index</h1>
 
 <% @trips.each do |trip| %>
-  <h4><%= link_to trip.name, trip %><br></h4>
-  Destination: <%=trip.destination%><br>
+<a href="<%=trip_path(trip)%>" class="list-group-item list-group-item-action active">
+  <h4><%=trip.name%> <br></h4>
+  <%="Destination:  #{trip.destination}"%>
   <%if trip.itineraries.count > 0%>
   Itinerary: <%trip.itineraries.each do |i|%><br>
   <%= link_to "Day #{i.day}", i %><br>
 <% end %>
+<%else%>
+<br>
+You have no itineraries yet!
+<%=link_to "Add New Itinerary", new_itinerary_path%>
 <% end %>
-<br><br>
-<% end %>
-</ul>
 
-<h4 align='center'><%=link_to 'Create New Trip', new_trip_path%></h4>
+</a>
+
+  <%end%>
