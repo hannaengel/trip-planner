@@ -1,11 +1,10 @@
-<h1>Trips Index</h1>
-
-
-<h4 align='center'><%=link_to 'Create New Trip', new_trip_path%></h4>
-
-
 
 <h1 align="center">Trips Index</h1>
+
+<h3><%=link_to 'Create New Trip', new_trip_path%></h3>
+
+
+
 
 <% @trips.each do |trip| %>
 <a href="<%=trip_path(trip)%>" class="list-group-item list-group-item-action active">
