@@ -1,10 +1,8 @@
-<h2>All Itineraries</h2>
+<h1 align="center">All Itineraries</h1>
 
 <%@itineraries.each do  |i| %>
 <ul>
-
  <%= link_to "#{i.trip.name}, Day #{i.day}", i %>
-
 
 </ul>
 <%end%>

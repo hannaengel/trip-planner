@@ -1,6 +1,6 @@
 <h2>Itinerary for Day <%=@itinerary.day%> <%=link_to @itinerary.trip.destination, @itinerary.trip%> </h2>
 
-
+<%if @itinerary.activity%>
 Activity: <%= @itinerary.activity.name %><br>
 <br>
 <br>
@@ -10,6 +10,11 @@ Activity: <%= @itinerary.activity.name %><br>
 <br>
 <%= form_tag @trip, method: "delete" do %>
   <%= submit_tag "Delete Itinerary" %>
+
+<% end %>
+<%else%>
+You have no activities added yet to this trip's itinerary!
+<%=link_to 'Add An Activity', new_activity_path%>
 <% end %>
 <br>
 <br>

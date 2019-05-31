@@ -1,17 +1,23 @@
 <h2>Create New User</h2>
 
+<% if flash[:message] %>
+  <p>
+    <%= flash[:message] %>
+  </p>
+<% end %>
 
-   <%= form_for @user do |f| %>
-     <p> Username:</br> <%= f.text_field :username%> </p>
-     <p> Password:</br> <%= f.password_field :password_digest%></p>
-     <p> Password Confirmation:</br> <%= f.password_field :password_digest%> </p>
-     <%= f.submit %>
-   <% end %>
-
-   <br>
-   <% if @user.errors.any? %>
-     <% for message_error in @user.errors.full_messages %>
-       <li> <%= message_error %></li>
-     <% end %>
-     </ul>
-   <% end %>
+<%= form_for @user do |f| %>
+<%= f.label :username %>
+  <div class="field">
+    <%= f.text_field :username %>
+  </div>
+  <%= f.label :password %>
+  <div class="field">
+    <%= f.password_field :password %>
+  </div>
+  <%= f.label :password_confirmation %>
+  <div class="field">
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <%= f.submit 'Create User' %>
+<% end %>

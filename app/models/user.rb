@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_many :trips
-    attr_accessor :password
+    has_secure_password
 
 
 

@@ -3,3 +3,12 @@
 
 
 <%= render 'errors' %>
+
+<%= form_for @activity do |f| %>
+Activity name:<%=f.text_field :name %> <br>
+Activity description:<%=f.text_field :description %> <br>
+Add to Trip Itinerary:
+  <%= f.collection_check_boxes :itinerary_ids, Itinerary.all, :id, :day %>
+
+  <%= f.submit %>
+<% end %>
