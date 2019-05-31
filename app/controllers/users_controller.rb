@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
+  before_action :redirect_user, only: [:show]
 
-  def index
-  end
 
   def show
-    set_user
   end
+
 
   def new
     @user = User.new

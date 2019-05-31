@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
+
+
   def index
-    @photos = Photo.all
+    @photos = Photo.where(trip_id: current_user.trip_ids)
   end
 
   def create

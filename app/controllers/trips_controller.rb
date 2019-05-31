@@ -1,10 +1,10 @@
 class TripsController < ApplicationController
 
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
-  
+
 
   def index
-    @trips = Trip.all
+    @trips = current_user.trips
 end
 
   def show

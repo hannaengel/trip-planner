@@ -3,7 +3,7 @@ class ItinerariesController < ApplicationController
     before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
 
   def index
-    @itineraries = Itinerary.all
+    @itineraries = current_user.itineraries
   end
 
   def show

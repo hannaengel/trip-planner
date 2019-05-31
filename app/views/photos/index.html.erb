@@ -1,5 +1,7 @@
 <h1 align="center">View All Your Photos</h1>
+<h4 align='center'><%=link_to 'Add A New Photo', new_photo_path%></h4>
 
+<%if @photos.each%>
 <% @photos.each do |p| %>
 
   <div class="card">
@@ -14,6 +16,5 @@
     </div>
 
     </div>
-
+    <%end%>
 <%end%>
-<h4 align='center'><%=link_to 'Add A New Photo', new_photo_path%></h4>
